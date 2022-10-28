@@ -25,7 +25,7 @@ class Solution:
             reversedNumber = reversedNumber * 10 + x % 10
             x //= 10
 
-        return x == reversedNumber or x == reversedNumber/10
+        return x == reversedNumber or x == reversedNumber//10
 
 
 if __name__ == "__main__":
