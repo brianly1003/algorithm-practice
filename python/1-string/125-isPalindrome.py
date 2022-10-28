@@ -10,6 +10,7 @@
 # Input: "race a car"
 # Output: false
 
+from distutils.log import debug
 import string
 
 class Solution:
@@ -24,6 +25,8 @@ if __name__ == "__main__":
 
     s = Solution()
     result = s.isPalindrome(input)
+
+    test = 1 ^ 2 ^ 2
 
     if result:
         print("True")
