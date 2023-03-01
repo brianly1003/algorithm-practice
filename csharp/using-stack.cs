@@ -3,8 +3,33 @@ using System.Collections.Generic;
 
 class Answer
 {
-    /// Checks that the given string is​​​​​​‌​​‌‌‌‌‌‌‌‌​‌​‌​‌‌​​​‌​​​ correct
     static public bool Check(string str)
+    {
+        var mapping = new Dictionary<char, char>() { { ']', '[' }, { ')', '(' }, { '}', '{' } };
+        var stack = new Stack<char>();
+
+        foreach (var c in str)
+        {
+            if (mapping.ContainsKey(c))
+            {
+                var top = stack.Count != 0 ? stack.Pop() : '#';
+                if (mapping[c] != top)
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                stack.Push(c);
+            }
+        }
+
+        return stack.Count == 0;
+    }
+
+
+    /// Checks that the given string is​​​​​​‌​​‌‌‌‌‌‌‌‌​‌​‌​‌‌​​​‌​​​ correct
+    static public bool Check1(string str)
     {
         if (string.IsNullOrEmpty(str)) return true;
 
