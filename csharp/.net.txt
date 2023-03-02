@@ -1,0 +1,20 @@
+1. The general contract of GetHashCode says that two objects having the same hashcode must be equals.
+=> FALSE
+
+2. If two objects are equals then they should have the same hashcode.
+=> TRUE
+
+2. Why is it preferable to use types in the System.Numerics namespace compared to creating custom vector types?
+=> The runtime converts the operations on these types to hardware based intrinsics which increases performance
+
+3. What is the correct code to use a block of unmanaged memory like an array?
+=> var unmanaged = new Span<int> (pointer, size);
+
+4. What is the best way to create a variable that acts like an array but does not live on the heap nor needs to be pinned?
+=> Span<int> numbers = stackalloc int[8];
+
+5. Type the lambda operator used in lambda expression to separate the input and the expression (2 characters).
+=> "=>"
+
+6. In a base 2 system (binary), what is the value of 11 & ~01?
+=> 10
