@@ -2,9 +2,11 @@
 
 # TODO: Using Iterative Solution            [O(logN) & O(1)]
 
+
 def binarySearch(arr, left, right, x):
     while left <= right:
-        mid = left + (right - left)//2
+        # ? mid = left + (right - left) // 2
+        mid = (left + right) >> 1
 
         # Check if x is present at mid
         if arr[mid] == x:
